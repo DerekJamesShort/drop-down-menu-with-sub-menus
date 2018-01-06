@@ -1,0 +1,45 @@
+/***************************** desktop screen styles *********************************/
+@media only screen and (min-width: 1000px) {
+	#mainMenuButtonID {
+		display: none;
+	}
+	div.mainMenuClass {
+		width: 100%;
+	}
+	ul.mainMenuListClass {
+		list-style-type: none;
+		display: inline-lock;
+	}
+	ul.subMenuListClass {
+		display: none;
+		list-style-type: square;
+	}
+}
+/**************************************** tablet screen styles ***********************************/
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+	div.mainMenuClass {
+		display: inline;
+	}
+	ul.mainMenuListClass li {
+		display: inline;
+	}
+	#mainMenuButtonID {
+		display: none;
+	}
+}
+/********************************** smartphone screen styles *************************************/
+@media only screen and (max-width: 768px) {
+	/** the dropdown menu content (hidden by default) **/
+	#allMenuContentID {
+		display: none;
+	}
+	ul.mainMenuListClass li {
+		display: block;
+	}
+	ul.mainMenuListClass li {
+		text-align: left;
+	}
+	ul.subMenuListClass {
+		display: none;
+	}
+}

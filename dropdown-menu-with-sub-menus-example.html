@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="styles.css" rel="stylesheet" type="text/css">
+		<script src="html5shiv.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!--
+			$(selector).slideToggle(speed,easing,callback)
+
+			Parameter -- Description
+			-------------------------
+			speed     -- Optional. Specifies the speed of the slide effect. Default value is 400 milliseconds. Possible values: milliseconds, "slow", "fast"
+			easing	  -- Optional. Specifies the speed of the element in different points of the animation. Default value is "swing".
+						 Possible values: "swing" - moves slower at the beginning/end, but faster in the middle, "linear" - moves in a constant speed.
+			callback  -- Optional. A function to be executed after the slideToggle() method is completed.
+		-->
+		<script>
+			$(document).ready(function()
+			{
+				/* open/close the main menu */
+				$("#mainMenuButtonID").click(function()
+				{
+					$("#allMenuContentID").slideToggle("slow", "linear");
+					$("#sub-menu-list-1").slideUp("slow", "linear");
+					$("#sub-menu-list-2").slideUp("slow", "linear");
+				});
+				/* open/close sub-menus, individually */
+				$("#main-menu-list-item-1").click(function()
+				{
+					$("#sub-menu-list-1").slideToggle("slow", "linear");
+					$("#sub-menu-list-2").slideUp("slow", "linear");
+				});
+				$("#main-menu-list-item-2").click(function()
+				{
+					$("#sub-menu-list-2").slideToggle("slow", "linear");
+					$("#sub-menu-list-1").slideUp("slow", "linear");
+				});
+				/* Copy the above "open/close sub-menu" code snippets and paste them below if you want to add menu items */
+			});
+		</script>
+	</head>
+	<body>
+		<button  id="mainMenuButtonID">Main Menu</button>
+		<div id="allMenuContentID">
+			<div class="mainMenuClass">
+				<ul class="mainMenuListClass">
+					<li class="mainMenuListItemClass" title="Main Menu Item 1" id="main-menu-list-item-1">Main Menu Item 1
+						<ul class="subMenuListClass" id="sub-menu-list-1">
+							<li class="subMenuListItemClass">
+								<a href="" title="Sub-menu Item 1a">Sub-menu Item 1a</a>
+							</li>
+							<li class="subMenuListItemClass">
+								<a href="" title="Sub-menu Item 1b">Sub-menu Item 1b</a>
+							</li>
+							<li class="subMenuListItemClass">
+								<a href="" title="Sub-menu Item 1c">Sub-menu Item 1c</a>
+							</li>
+						</ul>
+					</li>
+					<li class="mainMenuListItemClass" title="Main Menu Item 2" id="main-menu-list-item-2">Main Menu Item 2
+						<ul class="subMenuListClass" id="sub-menu-list-2">
+							<li class="subMenuListItemClass">
+								<a href="" title="Sub-menu Item 2a">Sub-menu Item 2a</a>
+							</li>
+							<li class="subMenuListItemClass">
+								<a href="" title="Sub-menu Item 2b">Sub-menu Item 2b</a>
+							</li>
+							<li class="subMenuListItemClass">
+								<a href="" title="Sub-menu Item 2c">Sub-menu Item 2c</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
